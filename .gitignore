@@ -1,0 +1,15 @@
+# Build outputs
+expr_eval
+expr_eval.exe
+test_runner
+test_runner.exe
+*.o
+*.obj
+*.exe
+
+# Editor / OS files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
