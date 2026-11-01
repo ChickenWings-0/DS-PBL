@@ -1,0 +1,84 @@
+================================================================================
+EXPRESSION EVALUATOR & BALANCED-PARENTHESES CHECKER -- DEMO INPUTS
+Team: Aksh Rastogi (02518015625) & Bhavya Porwal (02318015625)
+Usage: Copy and paste these expressions into menu options 1 through 6 during viva.
+================================================================================
+
+--- OPTION 1: BALANCED BRACKETS CHECK ---
+{[a+b]*(c-d)}           ->  Balanced: all brackets are properly matched.
+abc                     ->  Balanced: all brackets are properly matched. (no brackets)
+(a+b]                   ->  Mismatch at position 5: found ']' but expected ')' to close '(' from position 1.
+a+b)                    ->  Unexpected closing ')' at position 4: no matching opening bracket.
+((a+b)                  ->  Unclosed '(' at position 1: no matching closing bracket.
+[(a+b)*c                ->  Unclosed '[' at position 1: no matching closing bracket.
+{a+(b*c})               ->  Mismatch at position 8: found '}' but expected ')' to close '(' from position 4.
+
+--- OPTION 2: INFIX -> POSTFIX ---
+a+b*c                   ->  a b c * +
+(A+B)*C                 ->  A B + C *
+2^3^2                   ->  2 3 2 ^ ^
+100-20-30               ->  100 20 - 30 -
+(12+8)*3/4              ->  12 8 + 3 * 4 /
+10%4+7                  ->  10 4 % 7 +
+{a+b}*[c-d]             ->  a b + c d - *
+a+b*(c^d-e)^(f+g*h)-i   ->  a b c d ^ e - f g h * + ^ * + i -
+x1 + total              ->  x1 total +
+
+--- OPTION 3: INFIX -> PREFIX ---
+a+b*c                   ->  + a * b c
+(A+B)*C                 ->  * + A B C
+2^3^2                   ->  ^ 2 ^ 3 2
+100-20-30               ->  - - 100 20 30
+(12+8)*3/4              ->  / * + 12 8 3 4
+10%4+7                  ->  + % 10 4 7
+{a+b}*[c-d]             ->  * + a b - c d
+a+b*(c^d-e)^(f+g*h)-i   ->  - + a * b ^ - ^ c d e + f * g h i
+x1 + total              ->  + x1 total
+
+--- OPTION 4: EVALUATE POSTFIX ---
+12 8 + 3 * 4 /          ->  15
+2 3 4 * +               ->  14
+2 3 2 ^ ^               ->  512
+10 4 -                  ->  6
+7 2 /                   ->  3.5
+a b c * + (a=2, b=3, c=4)-> 14
+5 0 /                   ->  [ERROR] Division by zero at position 5
+5 +                     ->  [ERROR] Insufficient operands for '+' at position 3
+5 6 7 +                 ->  [ERROR] Too many operands: 2 values left on the stack
+
+--- OPTION 5: EVALUATE PREFIX ---
+/ * + 12 8 3 4          ->  15
+* + 2 3 4               ->  20
+^ 2 ^ 3 2               ->  512
+- 10 4                  ->  6
+% 10 4                  ->  2
+/ 7 2                   ->  3.5
++ a * b c (a=2, b=3, c=4)-> 14
+/ 5 0                   ->  [ERROR] Division by zero at position 1
+% 5 0                   ->  [ERROR] Modulo by zero at position 1
++ 5                     ->  [ERROR] Insufficient operands for '+' at position 1
++ 2 3 4                 ->  [ERROR] Too many operands: 2 values left on the stack
++ 2 x (x missing)       ->  [ERROR] Undefined variable 'x'
+( + 2 3 )               ->  [ERROR] Brackets are not allowed in prefix expressions
+
+--- OPTION 6: FULL PIPELINE ---
+a+b*(c-d)/e
+  Variables: a=10, b=4, c=9, d=3, e=2
+  Brackets:  Balanced: all brackets are properly matched.
+  Postfix:   a b c d - * e / +  ->  Value: 22
+  Prefix:    + a / * b - c d e  ->  Value: 22
+  Check:     postfix and prefix results MATCH
+
+(12+8)*3/4
+  Brackets:  Balanced: all brackets are properly matched.
+  Postfix:   12 8 + 3 * 4 /     ->  Value: 15
+  Prefix:    / * + 12 8 3 4     ->  Value: 15
+  Check:     postfix and prefix results MATCH
+
+--- INVALID EXPRESSIONS (SYNTAX & GRAMMAR CHECKS) ---
+a+*b                    ->  Operator '*' at position 3 is missing its left operand
+3 4                     ->  Missing operator between operands
+a+b$                    ->  Invalid character '$' at position 4
+-5+2                    ->  Unary '-' at position 1 is not supported; write (0-x) instead
+()                      ->  Empty bracket pair '()'
+
