@@ -17,7 +17,6 @@
 // =============================================================================
 #include <cmath>
 #include <iostream>
-#include <map>
 #include <string>
 #include <vector>
 
@@ -32,8 +31,8 @@
 
 namespace {
 
-static int passed = 0;
-static int failed = 0;
+int passed = 0;
+int failed = 0;
 
 void check(bool condition, const std::string& name) {
     if (condition) {
@@ -409,7 +408,7 @@ void testRoundTrip() {
 int main() {
     std::cout << "============================================================\n";
     std::cout << "  EXPRESSION EVALUATOR & STACK ADT - TEST RUNNER\n";
-    std::cout << "   दिल्ली टेक्निकल कैंपस (GGSIPU) · Data Structures Lab\n";
+    std::cout << "  Delhi Technical Campus (GGSIPU) - Data Structures Lab\n";
     std::cout << "============================================================\n";
 
     testArrayStack();
