@@ -2,7 +2,7 @@
 // PrefixEvaluator.h
 // Evaluation of prefix (Polish) expressions using LinkedStack.
 //
-// Interface: agreed in PLAN.md section 5.10 (do not change without both members)
+// Interface: fixed by the team; do not change without both members agreeing
 // Implemented by: Bhavya Porwal (02318015625) in src/PrefixEvaluator.cpp
 // =============================================================================
 #ifndef PREFIX_EVALUATOR_H

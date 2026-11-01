@@ -13,8 +13,6 @@ A C++17 console application that shows the **Stack ADT**, written from scratch i
 | Aksh Rastogi | 02518015625 | Stack ADT (array + linked list), tokenizer & validator, infix → postfix, postfix evaluation, trace table, menu & integration, Makefile, README (~60%) |
 | Bhavya Porwal | 02318015625 | Balanced-brackets checker, infix → prefix, prefix evaluation, test suite, sample inputs (~40%) |
 
-See [SPLIT.md](SPLIT.md) for the file-by-file breakdown.
-
 ## Features
 
 1. **Stack ADT from scratch** (no `std::stack`)
@@ -39,8 +37,7 @@ include/   StackADT.h  ArrayStack.h  LinkedStack.h  ExprCommon.h  TraceTable.h
 src/       main.cpp  Menu.cpp  ExprCommon.cpp  TraceTable.cpp  InfixToPostfix.cpp
            PostfixEvaluator.cpp  ParenChecker.cpp  InfixToPrefix.cpp  PrefixEvaluator.cpp
 tests/     test_main.cpp
-docs/      report, PPT, poster and viva content
-sample_inputs.txt   Makefile   PLAN.md   SPLIT.md   TEAMMATE_TASKS.md
+sample_inputs.txt   Makefile   README.md
 ```
 
 ## Build and run

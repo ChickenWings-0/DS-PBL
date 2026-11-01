@@ -2,7 +2,7 @@
 // ParenChecker.h
 // Balanced-brackets checker for (), {}, [] using LinkedStack.
 //
-// Interface: agreed in PLAN.md section 5.8 (do not change without both members)
+// Interface: fixed by the team; do not change without both members agreeing
 // Implemented by: Bhavya Porwal (02318015625) in src/ParenChecker.cpp
 // =============================================================================
 #ifndef PAREN_CHECKER_H
