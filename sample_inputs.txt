@@ -77,8 +77,8 @@ a+b*(c-d)/e
 
 --- INVALID EXPRESSIONS (SYNTAX & GRAMMAR CHECKS) ---
 a+*b                    ->  Operator '*' at position 3 is missing its left operand
-3 4                     ->  Missing operator between operands
+3 4                     ->  Missing operator between '3' and '4' at position 3
 a+b$                    ->  Invalid character '$' at position 4
 -5+2                    ->  Unary '-' at position 1 is not supported; write (0-x) instead
-()                      ->  Empty bracket pair '()'
+()                      ->  Empty brackets at position 1
 
